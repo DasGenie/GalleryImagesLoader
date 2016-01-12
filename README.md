@@ -6,8 +6,8 @@ on the grid. The selected images also has the Uri of the original image. Thus th
 #Features
 
 <ul>
-  <li>MultiSelection of images</li>
-  <li>Returns the Thumbnail and Actual ImagePath</li>
+  <li>Multiselection of images</li>
+  <li>Returns the thumbnail and actual image path</li>
   <li>Avoids writing query to fetch the original image path</li>
 </ul>
 
