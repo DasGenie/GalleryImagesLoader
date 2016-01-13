@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ImageLoader</string>
+    <string name="app_name">Gallery Images Loader</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>

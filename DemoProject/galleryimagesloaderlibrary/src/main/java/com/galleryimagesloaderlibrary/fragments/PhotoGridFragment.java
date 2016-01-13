@@ -26,10 +26,14 @@ import android.app.Activity;
 import android.app.LoaderManager;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.Loader;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
@@ -58,7 +62,7 @@ import java.util.List;
 public class PhotoGridFragment extends BaseFragment implements AbsListView.OnItemClickListener,
         LoaderManager.LoaderCallbacks<List<PhotoItem>> {
 
-    // Ivars.
+
     protected OnFragmentInteractionListener mListener;
     protected AbsListView mListView;
     protected PhotoAdapter mAdapter;
@@ -66,8 +70,8 @@ public class PhotoGridFragment extends BaseFragment implements AbsListView.OnIte
     protected TextView mEmptyTextView;
     protected ProgressDialog mLoadingProgressDialog;
     public ArrayList<PhotoItem> selectedPhotoItems;
-    private static final int PHOTO_MAXIMUM_UPLOAD_SIZE = 10;//MB
-    private int selected_image_size;
+    private ReturnSelectedImagesListener returnSelectedImagesListener;
+
 
     /**
      * Required empty constructor
@@ -79,14 +83,12 @@ public class PhotoGridFragment extends BaseFragment implements AbsListView.OnIte
     /**
      * Static factory method
      *
-     * @param sectionNumber
+     *
      * @return
      */
-    public static PhotoGridFragment newInstance(int sectionNumber) {
+    public static PhotoGridFragment newInstance(ReturnSelectedImagesListener returnSelectedImagesListener) {
         PhotoGridFragment fragment = new PhotoGridFragment();
-        Bundle args = new Bundle();
-        args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-        fragment.setArguments(args);
+        fragment.setReturnSelectedImagesListener(returnSelectedImagesListener);
         return fragment;
     }
 
@@ -94,6 +96,7 @@ public class PhotoGridFragment extends BaseFragment implements AbsListView.OnIte
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        setHasOptionsMenu(true);
         // Create an empty loader and pre-initialize the photo list items as an empty list.
         Context context = getActivity().getBaseContext();
 
@@ -130,6 +133,37 @@ public class PhotoGridFragment extends BaseFragment implements AbsListView.OnIte
         return view;
     }
 
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_custom_gallery, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_add) {
+
+            returnSelectedImagesListener.onImagesSelected(selectedPhotoItems);
+
+            return true;
+        } else if (id == android.R.id.home) {
+            Intent data = new Intent();
+            getActivity().setResult(getActivity().RESULT_CANCELED, data);
+            getActivity().finish();
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
     /**
      * Used to show a generic empty text warning. Override in inheriting classes.
      */
@@ -274,5 +308,18 @@ public class PhotoGridFragment extends BaseFragment implements AbsListView.OnIte
                 mLoadingProgressDialog.cancel();
             }
         }
+    }
+
+
+    /**
+     * call back to send list of selected photos to activity
+     */
+
+    public interface ReturnSelectedImagesListener{
+        void onImagesSelected(ArrayList<PhotoItem> selectedPhotoItems);
+    }
+
+    public void setReturnSelectedImagesListener(ReturnSelectedImagesListener returnSelectedImagesListener) {
+        this.returnSelectedImagesListener = returnSelectedImagesListener;
     }
 }

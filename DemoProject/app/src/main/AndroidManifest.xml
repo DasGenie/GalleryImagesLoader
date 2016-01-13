@@ -20,6 +20,10 @@
             </intent-filter>
         </activity>
 
+
+        <activity android:name="com.galleryimagesloader.activity.CustomGalleryActivity"
+            android:label="@string/app_name"/>
+
         
     </application>
 

@@ -30,13 +30,11 @@ import android.net.Uri;
  */
 public class BaseFragment extends Fragment {
 
-    public static final String ARG_SECTION_NUMBER = "ARG_SECTION_NUMBER";
-
     /**
      * Default empty constructor
      */
     public BaseFragment(){
-        //
+
     }
 
     /**
