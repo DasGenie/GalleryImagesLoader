@@ -8,7 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.GridView;
 import android.widget.ImageView;
 
-import com.galleryimagesloader.library.R;
+
+import com.galleryimagesloader.app.R;
 import com.galleryimagesloaderlibrary.fragments.BaseFragment;
 import com.galleryimagesloaderlibrary.fragments.PhotoGridFragment;
 import com.galleryimagesloaderlibrary.interfaces.DialogClickListener;

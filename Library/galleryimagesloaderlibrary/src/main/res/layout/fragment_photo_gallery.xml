@@ -32,6 +32,8 @@
         <GridView
             style="@style/GridView.PhotoGallery"
             android:id="@android:id/list"
+            android:verticalSpacing="2dp"
+            android:horizontalSpacing="2dp"
             android:numColumns="3" />
         <TextView
             android:id="@+id/empty"
