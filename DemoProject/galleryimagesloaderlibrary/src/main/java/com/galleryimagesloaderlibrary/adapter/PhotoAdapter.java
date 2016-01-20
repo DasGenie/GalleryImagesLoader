@@ -38,11 +38,7 @@ import com.squareup.picasso.Picasso;
 import java.io.File;
 import java.util.List;
 
-/**
- * Photo Array Adapter to power a simple Android photo gallery.
- * <p/>
- * Created by Rex St. John (on behalf of AirPair.com) on 3/4/14.
- */
+
 public class PhotoAdapter extends ArrayAdapter<PhotoItem> {
 
     // Ivars.

@@ -25,9 +25,7 @@ package com.galleryimagesloaderlibrary.fragments;
 import android.app.Fragment;
 import android.net.Uri;
 
-/**
- * Created by Rex St. John (on behalf of AirPair.com) on 3/4/14.
- */
+
 public class BaseFragment extends Fragment {
 
     /**

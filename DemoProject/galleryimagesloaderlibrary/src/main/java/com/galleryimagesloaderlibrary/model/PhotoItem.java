@@ -24,11 +24,7 @@ package com.galleryimagesloaderlibrary.model;
 
 import android.net.Uri;
 
-/**
- * Used to represent a photo item.
- * <p/>
- * Created by Rex St. John (on behalf of AirPair.com) on 3/4/14.
- */
+
 public class PhotoItem {
 
     // Ivars.
