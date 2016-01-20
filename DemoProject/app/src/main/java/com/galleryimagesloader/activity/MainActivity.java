@@ -1,6 +1,8 @@
 package com.galleryimagesloader.activity;
 
+import android.annotation.TargetApi;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -33,8 +35,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if(v  == addPhotosButton){
-            Intent intent = new Intent(MainActivity.this, CustomGalleryActivity.class);
-            startActivityForResult(intent, REQUEST_SELECT_PHOTOS_FROM_GALLERY);
+//            Intent intent = new Intent(MainActivity.this, CustomGalleryActivity.class);
+//            startActivityForResult(intent, REQUEST_SELECT_PHOTOS_FROM_GALLERY);
+            selectPhotos();
         }
     }
 
@@ -49,5 +52,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }else if(requestCode == REQUEST_SELECT_PHOTOS_FROM_GALLERY && resultCode == RESULT_CANCELED){
             Toast.makeText(this,"No images selected", Toast.LENGTH_LONG).show();
         }
+    }
+
+
+
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
+    public void selectPhotos(){
+        Intent intent = new Intent( );
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
+        startActivityForResult(Intent.createChooser(intent,
+                "select multiple images"), 1);
     }
 }

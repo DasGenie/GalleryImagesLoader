@@ -3,6 +3,11 @@
   <component name="issues">
     <option name="index">
       <map>
+        <entry key="$PROJECT_DIR$/../../../../Caresync-mam/CareSync/app/app.iml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
           <value>
             <set />
@@ -54,6 +59,26 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/galleryimagesloaderlibrary/src/main/res/values/strings.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../../Validations/app/src/main/java/com/payoda/activity/ValidationActivity.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../../Validations/app/src/main/res/layout/activity_main.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../../Validations/validations/src/main/java/com/payoda/validations/ValidateFieldsController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../../Validations/validations/src/main/java/com/payoda/validations/Validator.java">
           <value>
             <set />
           </value>

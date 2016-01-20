@@ -3,18 +3,17 @@ package com.galleryimagesloader.activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
+
 import android.support.v7.app.AppCompatActivity;
-import android.widget.GridView;
-import android.widget.ImageView;
+
 
 
 import com.galleryimagesloader.app.R;
 import com.galleryimagesloaderlibrary.fragments.BaseFragment;
 import com.galleryimagesloaderlibrary.fragments.PhotoGridFragment;
-import com.galleryimagesloaderlibrary.interfaces.DialogClickListener;
+
 import com.galleryimagesloaderlibrary.model.PhotoItem;
-import com.nostra13.universalimageloader.core.ImageLoader;
+
 
 import java.util.ArrayList;
 import java.util.List;
