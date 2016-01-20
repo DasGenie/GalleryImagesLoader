@@ -18,10 +18,20 @@ You can add this module as a dependency to your application.
 
         compile project(':galleryimagesloaderlibrary')
 
-Through Intent call CustomGalleryActivity class from your Activity/Fragment class.
+Call Fragment using the below code
 
-        Intent intent = new Intent(MainActivity.this, CustomGalleryActivity.class);
-        startActivity(intent);
+       PhotoGridFragment targetFragment = PhotoGridFragment.newInstance(this);
+       getFragmentManager().beginTransaction()
+       .replace(R.id.fragment_container, targetFragment)
+       .commit(); 
+       
+Implement the call back 
+
+       @Override
+       public void onImagesSelected(ArrayList<PhotoItem> selectedPhotoItems) {
+               // write your code here
+        }
+
 
 
 
