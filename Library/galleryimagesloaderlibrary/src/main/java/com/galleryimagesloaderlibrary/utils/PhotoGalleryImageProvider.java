@@ -43,8 +43,7 @@ import java.util.List;
 
 /**
  * This is a helper utility which automatically fetches paths to full size and thumbnail sized gallery images.
- * <p/>
- * Created by Rex St. John (on behalf of AirPair.com) on 3/4/14.
+ *
  */
 public class PhotoGalleryImageProvider {
 
