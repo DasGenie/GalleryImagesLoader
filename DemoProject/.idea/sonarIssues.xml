@@ -128,16 +128,6 @@
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/../../../Validations/validations/src/main/java/com/payoda/validations/ValidateFieldsController.java">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/../../../Validations/validations/src/main/java/com/payoda/validations/Validator.java">
-          <value>
-            <set />
-          </value>
-        </entry>
       </map>
     </option>
   </component>
