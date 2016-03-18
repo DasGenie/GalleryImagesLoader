@@ -31,6 +31,9 @@ Implement the call back
        public void onImagesSelected(ArrayList<PhotoItem> selectedPhotoItems) {
                // write your code here
         }
+        
+        
+  ![Screenshot](https://github.com/DasGenie/GalleryImagesLoader/blob/master/Screenshots/1h4q_T.gif)      
 
 
 
